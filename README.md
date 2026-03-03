@@ -1,15 +1,29 @@
 # webext-skeleton-loader
 
-A lightweight skeleton loading component for Chrome extensions that shows placeholder content while data loads.
+[![npm version](https://img.shields.io/npm/v/webext-skeleton-loader)](https://npmjs.com/package/webext-skeleton-loader)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/theluckystrike/webext-skeleton-loader/ci.yml?branch=main)](https://github.com/theluckystrike/webext-skeleton-loader/actions)
+[![Discord](https://img.shields.io/badge/Discord-Zovo-blueviolet.svg?logo=discord)](https://discord.gg/zovo)
+[![Website](https://img.shields.io/badge/Website-zovo.one-blue)](https://zovo.one)
+[![GitHub Stars](https://img.shields.io/github/stars/theluckystrike/webext-skeleton-loader?style=social)](https://github.com/theluckystrike/webext-skeleton-loader)
+
+> A lightweight skeleton loading component for Chrome extensions that shows placeholder content while data loads.
+
+## Overview
+
+**webext-skeleton-loader** is a lightweight library for creating skeleton loading placeholders in Chrome extensions. It provides CSS-only animations, multiple skeleton patterns, customizable colors, and full accessibility support — all in just ~1KB.
+
+Part of the [Zovo](https://zovo.one) developer tools family.
 
 ## Features
 
-- CSS-only animations
-- Multiple skeleton patterns
-- Customizable colors
-- Accessible (ARIA support)
-- No dependencies
-- ~1KB gzipped
+- ✅ **CSS-Only** - No JavaScript required for animations
+- ✅ **Multiple Patterns** - Text, avatar, card, table
+- ✅ **Customizable** - Colors and sizes
+- ✅ **Accessible** - ARIA support
+- ✅ **Zero Dependencies** - Pure vanilla
+- ✅ **Tiny** - ~1KB gzipped
 
 ## Installation
 
@@ -219,6 +233,43 @@ The library includes ARIA attributes for screen readers:
 - Chrome 80+
 - Edge 80+
 
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/skeleton-feature`
+3. **Make** your changes
+4. **Test** your changes: `npm test`
+5. **Commit** your changes: `git commit -m 'Add new feature'`
+6. **Push** to the branch: `git push origin feature/skeleton-feature`
+7. **Submit** a Pull Request
+
+## Built by Zovo
+
+Part of the [Zovo](https://zovo.one) developer tools family — privacy-first Chrome extensions built by developers, for developers.
+
+## See Also
+
+### Related Zovo Repositories
+
+- [webext-web-components](https://github.com/theluckystrike/webext-web-components) - Web Components library
+- [webext-data-table](https://github.com/theluckystrike/webext-data-table) - Data table component
+- [chrome-extension-starter-mv3](https://github.com/theluckystrike/chrome-extension-starter-mv3) - Extension template
+- [chrome-storage-plus](https://github.com/theluckystrike/chrome-storage-plus) - Type-safe storage
+
+### Zovo Chrome Extensions
+
+- [Zovo Tab Manager](https://chrome.google.com/webstore/detail/zovo-tab-manager) - Manage tabs efficiently
+- [Zovo Focus](https://chrome.google.com/webstore/detail/zovo-focus) - Block distractions
+- [Zovo Permissions Scanner](https://chrome.google.com/webstore/detail/zovo-permissions-scanner) - Check extension privacy grades
+
+Visit [zovo.one](https://zovo.one) for more information.
+
 ## License
 
-MIT
+MIT — [Zovo](https://zovo.one)
+
+---
+
+*Built by developers, for developers. No compromises on privacy.*
