@@ -1,3 +1,8 @@
+[![CI](https://github.com/theluckystrike/webext-skeleton-loader/actions/workflows/ci.yml/badge.svg)](https://github.com/theluckystrike/webext-skeleton-loader/actions)
+[![npm](https://img.shields.io/npm/v/webext-skeleton-loader)](https://www.npmjs.com/package/webext-skeleton-loader)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+
 # Webext Skeleton Loader
 
 A lightweight TypeScript library for creating shimmer loading placeholders in Chrome extensions.
@@ -158,3 +163,7 @@ webext-skeleton-loader is maintained by theluckystrike and part of the zovo.one 
 ## License
 
 MIT License - Copyright (c) 2025 theluckystrike
+
+---
+
+Built by [theluckystrike](https://github.com/theluckystrike) — [zovo.one](https://zovo.one)
