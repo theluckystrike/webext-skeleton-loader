@@ -1,5 +1,5 @@
 [![CI](https://github.com/theluckystrike/webext-skeleton-loader/actions/workflows/ci.yml/badge.svg)](https://github.com/theluckystrike/webext-skeleton-loader/actions)
-[![npm](https://img.shields.io/npm/v/webext-skeleton-loader)](https://www.npmjs.com/package/webext-skeleton-loader)
+[![npm](https://img.shields.io/npm/v/@theluckystrike/webext-skeleton-loader)](https://www.npmjs.com/package/@theluckystrike/webext-skeleton-loader)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 
@@ -16,7 +16,7 @@ Built for Manifest V3 Chrome extensions with zero dependencies.
 ## Installation
 
 ```bash
-npm install webext-skeleton-loader
+npm install @theluckystrike/webext-skeleton-loader
 ```
 
 ## API Reference
@@ -26,7 +26,7 @@ npm install webext-skeleton-loader
 Creates a text line skeleton with configurable width and height.
 
 ```typescript
-import { SkeletonLoader } from 'webext-skeleton-loader';
+import { SkeletonLoader } from '@theluckystrike/webext-skeleton-loader';
 
 const line = SkeletonLoader.text('80%', '16px');
 document.body.appendChild(line);
@@ -120,7 +120,7 @@ Parameters:
 ## Usage Example
 
 ```typescript
-import { SkeletonLoader } from 'webext-skeleton-loader';
+import { SkeletonLoader } from '@theluckystrike/webext-skeleton-loader';
 
 // Display card skeleton while fetching data
 async function loadUserProfile(containerId: string) {
