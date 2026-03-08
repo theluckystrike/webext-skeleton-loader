@@ -1,40 +1,41 @@
 {
-    "name": "webext-skeleton-loader",
-    "version": "0.1.0",
-    "description": "Skeleton loading placeholders for Chrome extensions — shimmer effect, text/image/card skeletons, custom shapes, and auto-replace for MV3.",
-    "author": "Zovo <hello@zovo.one>",
-    "license": "MIT",
-    "keywords": [
-        "chrome-extension",
-        "skeleton",
-        "loader",
-        "placeholder",
-        "shimmer",
-        "loading",
-        "manifest-v3",
-        "browser-extension",
-        "ui-component"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/theluckystrike/webext-skeleton-loader.git"
-    },
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "files": [
-        "dist",
-        "README.md",
-        "LICENSE"
-    ],
-    "scripts": {
-        "build": "tsc",
-        "prepublishOnly": "npm run build",
-        "test": "vitest run --environment happy-dom"
-    },
-    "devDependencies": {
-        "@types/chrome": "^0.0.260",
-        "happy-dom": "^20.8.3",
-        "typescript": "^5.3.3",
-        "vitest": "^4.0.18"
-    }
+  "name": "webext-skeleton-loader",
+  "version": "0.1.0",
+  "description": "Skeleton loading placeholders for Chrome extensions -- shimmer effect, text/image/card skeletons, and auto-replace for MV3.",
+  "author": "Zovo <hello@zovo.one>",
+  "license": "MIT",
+  "keywords": [
+    "chrome-extension",
+    "skeleton",
+    "loader",
+    "placeholder",
+    "shimmer",
+    "loading",
+    "manifest-v3",
+    "browser-extension",
+    "ui-component",
+    "animation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/webext-skeleton-loader.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run --environment happy-dom"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.260",
+    "happy-dom": "^20.8.3",
+    "typescript": "^5.3.3",
+    "vitest": "^4.0.18"
+  }
 }

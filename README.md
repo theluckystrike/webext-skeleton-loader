@@ -1,169 +1,106 @@
-[![CI](https://github.com/theluckystrike/webext-skeleton-loader/actions/workflows/ci.yml/badge.svg)](https://github.com/theluckystrike/webext-skeleton-loader/actions)
-[![npm](https://img.shields.io/npm/v/@theluckystrike/webext-skeleton-loader)](https://www.npmjs.com/package/@theluckystrike/webext-skeleton-loader)
+<div align="center">
+
+# webext-skeleton-loader
+
+Skeleton loading placeholders for Chrome extensions. Shimmer effects, text/image/card skeletons, custom shapes, and auto-replace for MV3.
+
+[![npm version](https://img.shields.io/npm/v/webext-skeleton-loader)](https://www.npmjs.com/package/webext-skeleton-loader)
+[![npm downloads](https://img.shields.io/npm/dm/webext-skeleton-loader)](https://www.npmjs.com/package/webext-skeleton-loader)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/webext-skeleton-loader)
 
-# Webext Skeleton Loader
+[Installation](#installation) · [Quick Start](#quick-start) · [API](#api) · [License](#license)
 
-A lightweight TypeScript library for creating shimmer loading placeholders in Chrome extensions.
+</div>
 
-## Overview
+---
 
-webext-skeleton-loader provides a simple API to create skeleton loading placeholders with shimmer animations. The library automatically injects required CSS styles and returns DOM elements ready to use in your extension popup or options page.
+## Features
 
-Built for Manifest V3 Chrome extensions with zero dependencies.
+- **Pre-built shapes** -- text lines, circles, rectangles, cards, avatars
+- **Shimmer animation** -- smooth loading indicator effect
+- **Custom shapes** -- define any skeleton shape with CSS
+- **Auto-replace** -- automatically swap skeletons for real content
+- **Composable** -- combine multiple skeleton types in layouts
+- **Lightweight** -- pure CSS animations, no runtime dependencies
 
 ## Installation
 
 ```bash
-npm install @theluckystrike/webext-skeleton-loader
+npm install webext-skeleton-loader
 ```
 
-## API Reference
-
-### SkeletonLoader.text
-
-Creates a text line skeleton with configurable width and height.
-
-```typescript
-import { SkeletonLoader } from '@theluckystrike/webext-skeleton-loader';
-
-const line = SkeletonLoader.text('80%', '16px');
-document.body.appendChild(line);
-```
-
-Parameters:
-- width: CSS width value (default: '100%')
-- height: CSS height value (default: '16px')
-
-Returns: HTMLElement
-
-### SkeletonLoader.image
-
-Creates an image placeholder skeleton with configurable dimensions.
-
-```typescript
-const image = SkeletonLoader.image('100%', '200px');
-document.body.appendChild(image);
-```
-
-Parameters:
-- width: CSS width value (default: '100%')
-- height: CSS height value (default: '200px')
-
-Returns: HTMLElement
-
-### SkeletonLoader.circle
-
-Creates a circular skeleton for avatar placeholders.
-
-```typescript
-const avatar = SkeletonLoader.circle('48px');
-document.body.appendChild(avatar);
-```
-
-Parameters:
-- size: CSS width and height value (default: '48px')
-
-Returns: HTMLElement
-
-### SkeletonLoader.card
-
-Creates a complete card skeleton with image and text lines.
-
-```typescript
-const card = SkeletonLoader.card('300px');
-document.body.appendChild(card);
-```
-
-Parameters:
-- width: CSS width value (default: '100%')
-
-Returns: HTMLElement containing image, title, and description placeholders
-
-### SkeletonLoader.list
-
-Creates a list skeleton with avatar and text rows.
-
-```typescript
-const list = SkeletonLoader.list(5);
-document.body.appendChild(list);
-```
-
-Parameters:
-- count: Number of list items (default: 5)
-
-Returns: HTMLElement containing the list structure
-
-### SkeletonLoader.showUntil
-
-Displays a skeleton until async data loads, then replaces it with rendered content.
-
-```typescript
-await SkeletonLoader.showUntil(
-  'container',
-  SkeletonLoader.card(),
-  async () => {
-    const response = await fetch('/api/data');
-    return response.json();
-  },
-  (data) => `<div class="card">${data.title}</div>`
-);
-```
-
-Parameters:
-- containerId: ID of the container element
-- skeleton: Skeleton HTMLElement to display while loading
-- loader: Async function that returns data
-- render: Function that converts data to HTML string
-
-## Usage Example
-
-```typescript
-import { SkeletonLoader } from '@theluckystrike/webext-skeleton-loader';
-
-// Display card skeleton while fetching data
-async function loadUserProfile(containerId: string) {
-  await SkeletonLoader.showUntil(
-    containerId,
-    SkeletonLoader.card('320px'),
-    async () => {
-      const res = await fetch('https://api.example.com/profile');
-      return res.json();
-    },
-    (user) => `
-      <div class="card">
-        <img src="${user.avatar}" alt="${user.name}" />
-        <h3>${user.name}</h3>
-        <p>${user.bio}</p>
-      </div>
-    `
-  );
-}
-```
-
-## Building
+<details>
+<summary>Other package managers</summary>
 
 ```bash
-npm run build
+pnpm add webext-skeleton-loader
+# or
+yarn add webext-skeleton-loader
 ```
 
-This compiles TypeScript to JavaScript in the dist directory.
+</details>
 
-## About
+## Quick Start
 
-webext-skeleton-loader is maintained by theluckystrike and part of the zovo.one developer tools ecosystem. zovo.one builds privacy-first Chrome extensions for developers.
+```typescript
+import { Skeleton } from "webext-skeleton-loader";
 
-## Related Projects
+// Create a text skeleton
+const text = Skeleton.text({ lines: 3, width: "80%" });
 
-- chrome-extension-starter-mv3 - Extension template
-- chrome-storage-plus - Type-safe storage wrapper
-- webext-message-bus - Inter-context messaging
+// Create a card skeleton
+const card = Skeleton.card({ width: 300, height: 200 });
+
+// Auto-replace when content is ready
+Skeleton.replace(element, realContent);
+```
+
+## API
+
+| Method | Description |
+|--------|-------------|
+| `text(options)` | Create a text line skeleton |
+| `circle(options)` | Create a circular skeleton |
+| `rect(options)` | Create a rectangular skeleton |
+| `card(options)` | Create a card skeleton |
+| `avatar(options)` | Create an avatar skeleton |
+| `custom(css)` | Create a custom-shaped skeleton |
+| `replace(element, content)` | Replace skeleton with real content |
+
+
+
+## Part of @zovo/webext
+
+This package is part of the [@zovo/webext](https://github.com/theluckystrike) family -- typed, modular utilities for Chrome extension development:
+
+| Package | Description |
+|---------|-------------|
+| [webext-storage](https://github.com/theluckystrike/webext-storage) | Typed storage with schema validation |
+| [webext-messaging](https://github.com/theluckystrike/webext-messaging) | Type-safe message passing |
+| [webext-tabs](https://github.com/theluckystrike/webext-tabs) | Tab query helpers |
+| [webext-cookies](https://github.com/theluckystrike/webext-cookies) | Promise-based cookies API |
+| [webext-i18n](https://github.com/theluckystrike/webext-i18n) | Internationalization toolkit |
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT License - Copyright (c) 2025 theluckystrike
+MIT License -- see [LICENSE](LICENSE) for details.
 
 ---
 
-Built by [theluckystrike](https://github.com/theluckystrike) — [zovo.one](https://zovo.one)
+<div align="center">
+
+Built by [theluckystrike](https://github.com/theluckystrike) · [zovo.one](https://zovo.one)
+
+</div>
